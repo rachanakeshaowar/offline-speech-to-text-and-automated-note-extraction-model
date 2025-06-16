@@ -91,7 +91,7 @@ The `WhisperFeatureExtractor` performs two important preprocessing operations be
 
 - Now we implemented function to prepare our data ready for the model:
 
-- We load and resample the audio data by calling batch["audio"]. As explained above, 🤗 Datasets performs any necessary resampling operations on the fly.
+- We load and resample the audio data by calling batch["audio"]. As explained above, Datasets performs any necessary resampling operations on the fly.
   
 - We use the feature extractor to compute the log-Mel spectrogram input features from our 1-dimensional audio array.
   
@@ -108,7 +108,7 @@ The `WhisperFeatureExtractor` performs two important preprocessing operations be
 ---
 # 📥Training and Evaluation
 
-- Now that we've prepared our data, we're ready to dive into the training pipeline. The 🤗 Trainer will do much of the heavy lifting for us. All we have to do is:
+- Now that we've prepared our data, we're ready to dive into the training pipeline. The Trainer will do much of the heavy lifting for us. All we have to do is:
 
 - Load a pre-trained checkpoint: we need to load a pre-trained checkpoint and configure it correctly for training.
 
@@ -116,7 +116,7 @@ The `WhisperFeatureExtractor` performs two important preprocessing operations be
 
 - Evaluation metrics: during evaluation, we want to evaluate the model using the word error rate (WER) metric. We need to define a compute_metrics function that handles this computation.
 
-- Define the training configuration: this will be used by the 🤗 Trainer to define the training schedule.
+- Define the training configuration: this will be used by the Trainer to define the training schedule.
 
 - Once we've fine-tuned the model, we will evaluate it on the test data to verify that we have correctly trained it to transcribe speech in Hindi.
 
@@ -154,7 +154,7 @@ The `WhisperFeatureExtractor` performs two important preprocessing operations be
  
 - We'll use the word error rate (WER) metric, the 'de-facto' metric for assessing ASR systems.
   
-- For more information, refer to the WER docs. We'll load the WER metric from 🤗 Evaluate.
+- For more information, refer to the WER docs. We'll load the WER metric from Evaluate.
   
 - We then simply have to define a function that takes our model predictions and returns the WER metric.
   
@@ -194,11 +194,11 @@ The `WhisperFeatureExtractor` performs two important preprocessing operations be
 # 📥 Building A Demo
   - Now that we've fine-tuned our model we can build a demo to show off its ASR capabilities!
     
-  - We'll make use of 🤗 Transformers pipeline, which will take care of the entire ASR pipeline, right from pre-processing the audio inputs to decoding the model predictions.
+  - We'll make use of Transformers pipeline, which will take care of the entire ASR pipeline, right from pre-processing the audio inputs to decoding the model predictions.
 
   - Running the example below will generate a Gradio demo where we can record speech through the microphone of our computer and input it to our fine-tuned Whisper model to transcribe the corresponding text:
 
   ---
 # 📥 Summary
-  - In this Project, we completed a step-by-step fine-tuning Whisper for multilingual ASR using 🤗 Datasets, Transformers and the Hugging Face Hub.. 
+  - In this Project, we completed a step-by-step fine-tuning Whisper for multilingual ASR using Datasets, Transformers and the Hugging Face Hub.. 
   
