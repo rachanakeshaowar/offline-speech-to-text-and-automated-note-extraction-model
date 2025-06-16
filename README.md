@@ -122,7 +122,7 @@ The `WhisperFeatureExtractor` performs two important preprocessing operations be
 
 ## 🔤 Load a Pre-Trained Checkpoint
 
-- We'll start our fine-tuning run from the pre-trained Whisper small checkpoint, the weights for which we need to load from the Hugging Face Hub. Again, this is trivial through use of 🤗 Transformers!
+- We'll start our fine-tuning run from the pre-trained Whisper small checkpoint, the weights for which we need to load from the Hugging Face Hub. Again, this is trivial through use of Transformers!
   
 - We can disable the automatic language detection task performed during inference, and force the model to generate in Hindi.
   
