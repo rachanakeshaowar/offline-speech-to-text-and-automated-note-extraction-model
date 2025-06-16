@@ -37,6 +37,8 @@ This project involves fine-tuning OpenAI's Whisper model for Automatic Speech Re
 For fine-tuning the Whisper model, we only consider the **input audio** and corresponding **transcribed text** from the dataset.  
 All additional metadata fields (such as speaker ID, age, gender, accent, etc.) are discarded during pre-processing.
 
+---
+
 # 📥 Load Whisper Feature Extractor (Data Preprocessing)
 
 The `WhisperFeatureExtractor` performs two important preprocessing operations before passing the audio to the model:
@@ -53,7 +55,7 @@ The `WhisperFeatureExtractor` performs two important preprocessing operations be
   
 - Log-Mel spectrograms are visual representations of audio and serve as input features for Whisper.
 
-We load the feature extractor from the pre-trained Whisper checkpoint
+ - We load the feature extractor from the pre-trained Whisper checkpoint
 
 ## 🔤 Load Whisper Tokenizer
 
@@ -76,6 +78,7 @@ We load the feature extractor from the pre-trained Whisper checkpoint
 - In doing so, we only need to keep track of two objects during training: the processor and the model.
 
 ## 🔤Prepare Data
+
 - Print the first example of the Common Voice dataset to see what form the data is in.
 
 - Since our input audio is sampled at 48kHz, we need to downsample it to 16kHz prior to passing it to the Whisper feature extractor, 16kHz being the sampling rate expected by the Whisper model.
@@ -145,6 +148,8 @@ We load the feature extractor from the pre-trained Whisper checkpoint
   
 - Initialise the data collator we've just defined.
 
+---
+
  # 📥 Evaluation Metrics
  
 - We'll use the word error rate (WER) metric, the 'de-facto' metric for assessing ASR systems.
@@ -166,6 +171,8 @@ We load the feature extractor from the pre-trained Whisper checkpoint
   
 - Since the processor is not trainable, it won't change over the course of training.
 
+  ---
+
 # 📥 Training
 - Training will take approximately 5-10 hours depending on your GPU or the one allocated to this Google Colab.
   
@@ -183,7 +190,7 @@ We load the feature extractor from the pre-trained Whisper checkpoint
   
 - The training results uploaded to the Hub. To do so, we execute the push_to_hub command and save the preprocessor object we created.
 
-  
+  ---
 # 📥 Building A Demo
   - Now that we've fine-tuned our model we can build a demo to show off its ASR capabilities!
     
@@ -191,7 +198,7 @@ We load the feature extractor from the pre-trained Whisper checkpoint
 
   - Running the example below will generate a Gradio demo where we can record speech through the microphone of our computer and input it to our fine-tuned Whisper model to transcribe the corresponding text:
 
-  
+  ---
 # 📥 Summary
   - In this Project, we completed a step-by-step fine-tuning Whisper for multilingual ASR using 🤗 Datasets, Transformers and the Hugging Face Hub.. 
   
